@@ -1,31 +1,27 @@
+"use client"
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import remarkMath from 'remark-math';
-import rehypeKatex from 'rehype-katex';
-import 'katex/dist/katex.min.css';
+import MarkdownRender from "@/app/componments/MarkdownRender";
 
-const markdown = `
-This is a simple example:
+const App = () => {
+  const markdownContent = `
+  # 示例文档
 
-Inline math: $E = mc^2$
+  这是一个包含LaTeX公式的Markdown文档。
 
-Block math:
+  行内公式：\\(x^2 + y^2 = z^2\\)
 
-$$
-\\int_{a}^{b} x^2 \\, dx = \\left[ \\frac{x^3}{3} \\right]_{a}^{b} = \\frac{b^3}{3} - \\frac{a^3}{3}
-$$
-`;
+  块级公式：
 
-function App() {
+  \\[
+  \\int_0^\\infty e^{-x} dx = 1
+  \\]
+  `;
+
   return (
     <div>
-      <ReactMarkdown
-        children={markdown}
-        remarkPlugins={[remarkMath]}
-        rehypePlugins={[rehypeKatex]}
-      />
+      <MarkdownRender content={markdownContent}/>
     </div>
   );
-}
+};
 
 export default App;

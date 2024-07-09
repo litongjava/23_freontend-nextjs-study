@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+}
+
+.box1{
+  flex:1;
+  border:1px solid red;
+}
+
+.box2{
+  flex:12;
+  border:1px solid red;
+}
+
+.box3{
+  flex:1;
+  border:1px solid red;
+}
